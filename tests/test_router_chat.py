@@ -8,7 +8,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from dotenv import load_dotenv
 load_dotenv()
 
-from supervisor_agent.router import route_message
+from supervisor_agent.main_router import route_message
 
 logging.basicConfig(
     level=logging.INFO,

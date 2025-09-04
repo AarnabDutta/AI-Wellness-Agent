@@ -2,7 +2,14 @@ from model.customllm import UnifiedLLMClient
 import os
 
 def load_system_prompt(user_name=None):
-    prompt_path = os.path.join(os.path.dirname(__file__), '..', 'prompts', 'stress.txt')
+    # Fix: Update path to correctly point to prompts/mental_health/stress.txt
+    prompt_path = os.path.join(
+        os.path.dirname(__file__), 
+        '..', '..', 
+        'prompts',
+        'mental_health',
+        'stress.txt'
+    )
     with open(prompt_path, encoding='utf-8') as f:
         prompt = f.read().strip()
     if user_name:
@@ -20,7 +27,7 @@ def format_history(prev_messages):
 def handle_stress(user_message, history=None, user_name=None):
     llm = UnifiedLLMClient()
     system_prompt = load_system_prompt(user_name=user_name)
-
+    
     formatted_history = format_history(history)
     if not formatted_history or formatted_history[0].get("role") != "system":
         formatted_history = [{"role": "system", "content": system_prompt}] + formatted_history

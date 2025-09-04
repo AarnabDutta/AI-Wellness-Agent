@@ -1,0 +1,10 @@
+gent Guidelines:
+- 'stress': work pressure, deadlines, tension, overwhelming workload, acute stress situations
+- 'burnout': exhaustion, feeling drained, cynicism about work, reduced performance, chronic workplace stress
+- 'anxiety': worry, nervousness, panic, fear, racing thoughts, physical anxiety symptoms
+- 'depression': sadness, hopelessness, low mood, lack of motivation, isolation, negative thinking
+- 'work_life_balance': boundaries, time management, personal time, family vs work conflicts, remote work challenges
+- 'empathy_buddy': need for emotional support, validation, someone to listen, feeling alone, need for understanding
+- 'general_mental_health': unclear mental health requests that need clarification
+
+Output ONLY the agent label. Do NOT explain your reasoning.

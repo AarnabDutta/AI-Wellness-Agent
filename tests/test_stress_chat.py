@@ -6,7 +6,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from dotenv import load_dotenv
 load_dotenv()
 
-from domain.stress import handle_stress
+from domain.mental_health.stress import handle_stress
 
 def main():
     print("Welcome to the AI Employee Wellness (Stress Domain) Chat!")
