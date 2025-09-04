@@ -8,7 +8,9 @@ from domain.mental_health.work_life_balance import handle_work_life_balance
 from domain.mental_health.empathy_buddy import handle_empathy_buddy
 
 def load_mental_health_supervisor_prompt():
-    prompt_path = os.path.join(os.path.dirname(__file__), '..', 'prompts', 'mental_health', 'supervisor.txt')
+    prompt_path = os.path.join(
+        os.path.dirname(__file__), '..', 'prompts', 'mental_health', 'supervisor.txt'
+    )
     with open(prompt_path, encoding='utf-8') as f:
         return f.read().strip()
 
@@ -27,18 +29,16 @@ def detect_mental_health_agent(user_message, history=None, user_name=None):
     )
     
     response = result.strip().lower()
-    if "stress" in response:
-        return "stress"
-    elif "burnout" in response:
-        return "burnout"
-    elif "anxiety" in response:
-        return "anxiety"
-    elif "depression" in response:
-        return "depression"
-    elif "work_life_balance" in response or "work life balance" in response:
-        return "work_life_balance"
-    elif "empathy" in response:
-        return "empathy_buddy"
+    # Accept only precise, one-word outputs from the LLM
+    if response in [
+        "stress",
+        "burnout",
+        "anxiety",
+        "depression",
+        "work_life_balance",
+        "empathy_buddy"
+    ]:
+        return response
     else:
         return "general_mental_health"
 
