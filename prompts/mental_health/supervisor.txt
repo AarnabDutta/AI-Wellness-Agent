@@ -8,9 +8,9 @@ Analyze the user's message using these evidence-based diagnostic differentiators
 
 ### STRESS - Acute Workplace Pressure Response
 **Core Pattern:** Overwhelming pressure from external work demands with identifiable triggers
-**Key Indicators:** 
+**Key Indicators:**
 - Time-sensitive pressures ("deadlines", "urgent", "too much to do")
-- Workload overwhelm ("swamped", "buried", "can't keep up")  
+- Workload overwhelm ("swamped", "buried", "can't keep up")
 - Acute situational demands ("this project", "my manager wants", "tight timeline")
 - Performance pressure ("need to deliver", "expectations are high")
 - Reactive language ("feeling overwhelmed", "under pressure", "stressed out")
@@ -18,10 +18,10 @@ Analyze the user's message using these evidence-based diagnostic differentiators
 **Physical Symptoms:** Tension headaches, muscle tightness, restlessness
 **Example Patterns:** "Deadlines are killing me", "Too much work, not enough time", "My manager is putting enormous pressure on me", "This project is overwhelming"
 
-### BURNOUT - Chronic Workplace Exhaustion Syndrome  
+### BURNOUT - Chronic Workplace Exhaustion Syndrome
 **Core Pattern:** Long-term emotional/physical depletion with cynicism and reduced efficacy (WHO ICD-11 criteria)
 **Key Indicators:**
-- Chronic exhaustion ("constantly tired", "drained", "no energy left")  
+- Chronic exhaustion ("constantly tired", "drained", "no energy left")
 - Work cynicism ("don't care anymore", "nothing matters", "work is meaningless")
 - Detachment from job ("emotionally empty at work", "going through the motions")
 - Reduced professional efficacy ("can't do anything right", "used to be good at this")
@@ -34,7 +34,7 @@ Analyze the user's message using these evidence-based diagnostic differentiators
 **Core Pattern:** Excessive worry, anticipatory fear, and physiological arousal about work performance/situations
 **Key Indicators:**
 - Persistent worry ("can't stop thinking", "what if", "worried about")
-- Anticipatory dread ("dreading meetings", "scared of", "nervous about")  
+- Anticipatory dread ("dreading meetings", "scared of", "nervous about")
 - Physical anxiety symptoms ("racing heart", "can't breathe", "shaking")
 - Avoidance behaviors ("don't want to", "avoiding", "can't face")
 - Performance fears ("what if I fail", "afraid of making mistakes", "imposter syndrome")
@@ -47,7 +47,7 @@ Analyze the user's message using these evidence-based diagnostic differentiators
 **Core Pattern:** Persistent sadness, hopelessness, anhedonia (loss of pleasure), and functional impairment
 **Key Indicators:**
 - Persistent sadness ("feel sad", "hopeless", "empty", "nothing brings joy")
-- Motivational deficit ("no energy", "can't get out of bed", "lost all motivation")  
+- Motivational deficit ("no energy", "can't get out of bed", "lost all motivation")
 - Anhedonia ("nothing feels good", "don't enjoy anything", "lost interest")
 - Hopelessness ("nothing will get better", "no point", "worthless")
 - Sleep/energy disruption ("can't sleep", "exhausted all the time", "no energy for anything")
@@ -74,7 +74,7 @@ Analyze the user's message using these evidence-based diagnostic differentiators
 **Key Indicators:**
 - Explicit support requests ("need someone to listen", "just want to talk", "need support")
 - Isolation feelings ("feel alone", "no one understands", "isolated")
-- Validation seeking ("am I crazy", "is this normal", "need reassurance")  
+- Validation seeking ("am I crazy", "is this normal", "need reassurance")
 - Emotional overwhelm ("don't know who to talk to", "need to vent", "emotional support")
 - General distress without specific symptom focus
 - Connection language ("want someone who cares", "need understanding", "feel heard")
