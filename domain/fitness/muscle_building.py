@@ -2,7 +2,9 @@ from model.customllm import UnifiedLLMClient
 import os
 
 def load_system_prompt(user_name=None):
-    prompt_path = os.path.join(os.path.dirname(__file__), '..', 'prompts', 'sleep.txt')
+    prompt_path = os.path.join(
+        os.path.dirname(__file__), '..', 'prompts', 'fitness', 'muscle_building.txt'
+    )
     with open(prompt_path, encoding='utf-8') as f:
         prompt = f.read().strip()
     if user_name:
@@ -17,7 +19,7 @@ def format_history(prev_messages):
         for msg in prev_messages if "role" in msg and "content" in msg
     ]
 
-def handle_sleep(user_message, history=None, user_name=None):
+def handle_muscle_building(user_message, history=None, user_name=None):
     llm = UnifiedLLMClient()
     system_prompt = load_system_prompt(user_name=user_name)
 
