@@ -3,7 +3,7 @@ import os
 
 def load_system_prompt(user_name=None):
     prompt_path = os.path.join(
-        os.path.dirname(__file__), '..', 'prompts', 'fitness', 'sleep_and_recovery.txt'
+        os.path.dirname(__file__), '..', '..', 'prompts', 'fitness', 'sleep_and_recovery.txt'
     )
     with open(prompt_path, encoding='utf-8') as f:
         prompt = f.read().strip()
