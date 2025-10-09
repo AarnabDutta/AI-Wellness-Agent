@@ -19,7 +19,7 @@ def format_history(prev_messages):
         for msg in prev_messages if "role" in msg and "content" in msg
     ]
 
-def handle_muscle_building(user_message, history=None, user_name=None):
+def handle_muscle_building(user_message, history=None, user_name=None, stream=False):
     llm = UnifiedLLMClient()
     system_prompt = load_system_prompt(user_name=user_name)
 
@@ -27,10 +27,17 @@ def handle_muscle_building(user_message, history=None, user_name=None):
     if not formatted_history or formatted_history[0].get("role") != "system":
         formatted_history = [{"role": "system", "content": system_prompt}] + formatted_history
     formatted_history.append({"role": "user", "content": user_message})
-
-    reply = llm.generate_response(
-        prompt=user_message,
-        history=formatted_history,
-        system_prompt=None
-    )
+    
+    if stream:
+        reply = llm.generate_response_stream(
+            prompt=user_message,
+            history=formatted_history,
+            system_prompt=None
+        )
+    else:
+        reply = llm.generate_response(
+            prompt=user_message,
+            history=formatted_history,
+            system_prompt=None
+        )
     return reply

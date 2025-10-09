@@ -38,18 +38,18 @@ def detect_fitness_agent(user_message, history=None, user_name=None):
     }
     return result if result in valid else "general_fitness"
 
-def route_fitness(user_message, history, user_name):
+def route_fitness(user_message, history, user_name, stream=False):
     agent = detect_fitness_agent(user_message, history=history, user_name=user_name)
     if agent == "weight_loss":
-        return handle_weight_loss(user_message, history=history, user_name=user_name), "fitness_weight_loss"
+        return handle_weight_loss(user_message, history=history, user_name=user_name, stream=stream), "fitness_weight_loss"
     elif agent == "muscle_building":
-        return handle_muscle_building(user_message, history=history, user_name=user_name), "fitness_muscle_building"
+        return handle_muscle_building(user_message, history=history, user_name=user_name, stream=stream), "fitness_muscle_building"
     elif agent == "weight_maintenance":
-        return handle_weight_maintenance(user_message, history=history, user_name=user_name), "fitness_weight_maintenance"
+        return handle_weight_maintenance(user_message, history=history, user_name=user_name, stream=stream), "fitness_weight_maintenance"
     elif agent == "sleep_and_recovery":
-        return handle_sleep_and_recovery(user_message, history=history, user_name=user_name), "fitness_sleep_and_recovery"
+        return handle_sleep_and_recovery(user_message, history=history, user_name=user_name, stream=stream), "fitness_sleep_and_recovery"
     elif agent == "activity_lifestyle":
-        return handle_activity_lifestyle(user_message, history=history, user_name=user_name), "fitness_activity_lifestyle"
+        return handle_activity_lifestyle(user_message, history=history, user_name=user_name, stream=stream), "fitness_activity_lifestyle"
     else:
         return (
             f"I'm here to help with your fitness goals, {user_name}. "

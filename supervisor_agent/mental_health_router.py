@@ -42,21 +42,21 @@ def detect_mental_health_agent(user_message, history=None, user_name=None):
     else:
         return "general_mental_health"
 
-def route_mental_health(user_message, history, user_name):
+def route_mental_health(user_message, history, user_name, stream=False):
     agent_type = detect_mental_health_agent(user_message, history=history, user_name=user_name)
     
     if agent_type == "stress":
-        return handle_stress(user_message, history=history, user_name=user_name), "mental_health_stress"
+        return handle_stress(user_message, history=history, user_name=user_name, stream=stream), "mental_health_stress"
     elif agent_type == "burnout":
-        return handle_burnout(user_message, history=history, user_name=user_name), "mental_health_burnout"
+        return handle_burnout(user_message, history=history, user_name=user_name, stream=stream), "mental_health_burnout"
     elif agent_type == "anxiety":
-        return handle_anxiety(user_message, history=history, user_name=user_name), "mental_health_anxiety"
+        return handle_anxiety(user_message, history=history, user_name=user_name, stream=stream), "mental_health_anxiety"
     elif agent_type == "depression":
-        return handle_depression(user_message, history=history, user_name=user_name), "mental_health_depression"
+        return handle_depression(user_message, history=history, user_name=user_name, stream=stream), "mental_health_depression"
     elif agent_type == "work_life_balance":
-        return handle_work_life_balance(user_message, history=history, user_name=user_name), "mental_health_work_life_balance"
+        return handle_work_life_balance(user_message, history=history, user_name=user_name, stream=stream), "mental_health_work_life_balance"
     elif agent_type == "empathy_buddy":
-        return handle_empathy_buddy(user_message, history=history, user_name=user_name), "mental_health_empathy_buddy"
+        return handle_empathy_buddy(user_message, history=history, user_name=user_name, stream=stream), "mental_health_empathy_buddy"
     else:
         return (
             f"I'm here to help with your mental health, {user_name}. "

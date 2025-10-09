@@ -37,18 +37,18 @@ def detect_nutrition_agent(user_message, history=None, user_name=None):
     }
     return result if result in valid else "general_nutrition"
 
-def route_nutrition(user_message, history, user_name):
+def route_nutrition(user_message, history, user_name, stream=False):
     agent = detect_nutrition_agent(user_message, history=history, user_name=user_name)
     if agent == "personalized_plan":
-        return handle_personalized_plan(user_message, history=history, user_name=user_name), "nutrition_personalized_plan"
+        return handle_personalized_plan(user_message, history=history, user_name=user_name, stream=stream), "nutrition_personalized_plan"
     elif agent == "nutritional_tracking":
-        return handle_nutritional_tracking(user_message, history=history, user_name=user_name), "nutrition_nutritional_tracking"
+        return handle_nutritional_tracking(user_message, history=history, user_name=user_name, stream=stream), "nutrition_nutritional_tracking"
     elif agent == "weight_loss_meal":
-        return handle_weight_loss_meal(user_message, history=history, user_name=user_name), "nutrition_weight_loss_meal"
+        return handle_weight_loss_meal(user_message, history=history, user_name=user_name, stream=stream), "nutrition_weight_loss_meal"
     elif agent == "muscle_building_plan":
-        return handle_muscle_building_plan(user_message, history=history, user_name=user_name), "nutrition_muscle_building_plan"
+        return handle_muscle_building_plan(user_message, history=history, user_name=user_name, stream=stream), "nutrition_muscle_building_plan"
     elif agent == "diabetic_plan":
-        return handle_diabetic_plan(user_message, history=history, user_name=user_name), "nutrition_diabetic_plan"
+        return handle_diabetic_plan(user_message, history=history, user_name=user_name, stream=stream), "nutrition_diabetic_plan"
     else:
         return (
             f"I'm here to support your nutrition goals, {user_name}. "

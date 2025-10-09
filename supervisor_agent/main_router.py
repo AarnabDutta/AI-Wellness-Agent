@@ -13,7 +13,6 @@ def load_main_supervisor_prompt():
 def detect_main_domain(user_message, history=None, user_name=None):
     llm = UnifiedLLMClient()
     system_prompt = load_main_supervisor_prompt()
-
     formatted_history = [] if not history else list(history)
     formatted_history.append({"role": "user", "content": user_message})
 
@@ -26,7 +25,7 @@ def detect_main_domain(user_message, history=None, user_name=None):
     valid = {"mental_health", "fitness", "nutrition", "general"}
     return result if result in valid else "general"
 
-def route_message(user_message, history, user_name):
+def route_message(user_message, history, user_name, stream=False):
     if not history:  # First message only
         greeting = (
             f"Hello {user_name}, I'm your AI Wellness companion. "
@@ -36,11 +35,11 @@ def route_message(user_message, history, user_name):
 
     main_domain = detect_main_domain(user_message, history=history, user_name=user_name)
     if main_domain == "mental_health":
-        return route_mental_health(user_message, history=history, user_name=user_name)
+        return route_mental_health(user_message, history=history, user_name=user_name, stream=stream)
     elif main_domain == "fitness":
-        return route_fitness(user_message, history=history, user_name=user_name)
+        return route_fitness(user_message, history=history, user_name=user_name, stream=stream)
     elif main_domain == "nutrition":
-        return route_nutrition(user_message, history=history, user_name=user_name)
+        return route_nutrition(user_message, history=history, user_name=user_name, stream=stream)
     else:
         # "general" or fallback: general wellness/small talk agent
-        return handle_general_wellness(user_message, history=history, user_name=user_name)
+        return handle_general_wellness(user_message, history=history, user_name=user_name, stream=stream)

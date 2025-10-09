@@ -19,7 +19,7 @@ def format_history(prev_messages):
         for msg in prev_messages if "role" in msg and "content" in msg
     ]
 
-def handle_general_wellness(user_message, history=None, user_name=None):
+def handle_general_wellness(user_message, history=None, user_name=None, stream=False):
     llm = UnifiedLLMClient()
     system_prompt = load_general_wellness_prompt(user_name=user_name)
 
@@ -28,9 +28,16 @@ def handle_general_wellness(user_message, history=None, user_name=None):
         formatted_history = [{"role": "system", "content": system_prompt}] + formatted_history
     formatted_history.append({"role": "user", "content": user_message})
 
-    reply = llm.generate_response(
-        prompt=user_message,
-        history=formatted_history,
-        system_prompt=None  # Already included as first msg
-    )
+    if stream:
+        reply = llm.generate_response_stream(
+            prompt=user_message,
+            history=formatted_history,
+            system_prompt=None  # Already included as first msg
+        )
+    else:
+        reply = llm.generate_response(
+            prompt=user_message,
+            history=formatted_history,
+            system_prompt=None  # Already included as first msg
+        )
     return reply, "general_wellness"
