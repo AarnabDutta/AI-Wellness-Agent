@@ -46,11 +46,6 @@ class UnifiedLLMClient:
             data = response.json()
             return data.get('choices', [{}])[0].get('message', {}).get('content', '').strip()
         except Exception as e:
-            try:
-                print("API error details:", response.json())
-            except Exception:
-                pass
-            print("Exception:", e)
             return "Sorry, the AI service is temporarily unavailable."
 
     def generate_response_stream(
@@ -96,16 +91,9 @@ class UnifiedLLMClient:
                             delta = data["choices"][0].get("delta", {})
                             content = delta.get("content", "")
                             if content:
-                                print(content, end="", flush=True)
-                                full_reply += content
-                print()  # Newline after completion
+                                full_reply += content     # Only append, never print!
                 return full_reply
         except Exception as e:
-            try:
-                print("Streaming API error details:", response.json())
-            except Exception:
-                pass
-            print("Streaming Exception:", e)
             return "Sorry, the AI service is temporarily unavailable."
 
 if __name__ == "__main__":
@@ -122,4 +110,4 @@ if __name__ == "__main__":
         "Say hi in a streaming fashion.", 
         system_prompt="You are an AI wellness coach."
     )
-    # reply_stream output is already printed live, but available for use if needed
+    print(reply_stream)
